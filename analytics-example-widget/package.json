@@ -1,6 +1,6 @@
 {
   "name": "analytics-example-widget",
-  "version": "1.0.15",
+  "version": "1.0.21",
   "description": "Widget extension using VSTS Analytics and Charts with React and Typescript",
   "repository": "https://github.com/Microsoft/vsts-extension-samples",
   "license": "MIT",

@@ -8,10 +8,10 @@
         }
     </style>    
 
-    <title>Tino's Custom Test Hub</title>
-    <script src="lib/VSS.SDK.js"></script>
+	<title>Tino's Custom Test Hub</title>
+	<script src="lib/VSS.SDK.js"></script>
 
-    <script type="text/javascript">
+	<script type="text/javascript">
 
         var testClient;
 
@@ -35,12 +35,16 @@
             testClient.cloneTestPlan( {
 
                 options: {
-                    copyAllSuites: true
+                    copyAllSuites: true,
+                    copyAncestorHierarchy: true,
+                    cloneRequirements: true
                 },
 
                 destinationTestPlan: {
                     name: 'TestPlanClonedFromNr' + sourcePlanId
-                }
+                },
+
+                suiteIds: []
 
             }, 'TinoPartsUnlimited', sourcePlanId).then(function(){
 
@@ -52,9 +56,9 @@
 
 </head>
 <body>
-    <h1>Tino's Custom Hub v1.0.15</h1>
+	<h1>Tino's Custom Hub v1.0.21</h1>
     <br>
-    Enter Test Plan ID to clone:
+    Test Plan ID to clone:
     <br>
     <input type="text" id="txtPlanId" name="txtPlanId"/>
     <br>

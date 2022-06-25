@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "Analytics-example-widget",
-    "version": "1.0.15",
+    "version": "1.0.21",
     "name": "Analytics example widget",
     "description": "An example widget demonstrating VSTS Analytics and Charting services, built with Typescript and React.",
     "publisher": "contoso",
