@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "Analytics-example-widget",
-    "version": "1.0.0",
+    "version": "1.0.15",
     "name": "Analytics example widget",
     "description": "An example widget demonstrating VSTS Analytics and Charting services, built with Typescript and React.",
     "publisher": "contoso",
@@ -9,6 +9,9 @@
         {
             "id": "Microsoft.VisualStudio.Services"
         }
+    ],
+    "categories": [
+        "Azure Pipelines"
     ],
     "icons": {
         "default": "images/logo.png"
@@ -82,9 +85,26 @@
                 "description": "Configures AnalyticsExampleWidget", 
                 "uri": "content/configuration.html"
             }
+        },
+
+        {
+            "id": "AnalyticsExampleWidget.CustomHub",
+            "type": "ms.vss-web.hub",
+            "description": "Adds a 'Hello' hub to the Work hub group.",
+            "targets": [
+                "ms.vss-test-web.test-hub-group"
+            ],
+            "properties": {
+                "name": "Tino's custom test hub",
+                "order": 99,
+                "uri": "my-custom-hub.html"
+            }
         }
     ],
     "files": [
+        {
+            "path": "my-custom-hub.html", "addressable": true
+        },        
         {
             "path": "content",
             "addressable": true
@@ -104,6 +124,9 @@
         }
     ],
     "scopes": [
-        "vso.analytics"
+        "vso.analytics",
+        "vso.work",
+        "vso.test",
+        "vso.test_write"
     ]
 }

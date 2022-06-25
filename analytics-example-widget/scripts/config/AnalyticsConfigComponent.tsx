@@ -4,7 +4,7 @@ import { WorkItemField } from 'TFS/WorkItemTracking/Contracts';
 import { ConfigurationContext } from 'VSS/Common/Contracts/Platform';
 import { Widget } from '../widget/Widget';
 import { AnalyticsWidgetSettings, WidgetSettings } from '../common/WidgetSettings';
-import { AggregationMode, Aggregation, AggregationConfigurationState } from '../Common/AggregationContracts';
+import { AggregationMode, Aggregation, AggregationConfigurationState } from '../common/AggregationContracts';
 
 import * as Q from 'q';
 import * as React from 'react';

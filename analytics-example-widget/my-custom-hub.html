@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <style>
+        body {
+            padding: 10px !important;
+        }
+    </style>    
+
+	<title>Tino's Custom Test Hub</title>
+	<script src="lib/VSS.SDK.js"></script>
+
+	<script type="text/javascript">
+
+        var testClient;
+
+        VSS.init();
+        VSS.require(["VSS/Service", "TFS/TestManagement/RestClient"], function (VSS_Service, TFS_WebApi) {
+
+            testClient = VSS_Service.getCollectionClient(TFS_WebApi.TestHttpClient2_2);
+
+            console.log('>>> obtained testClient successfuly');
+
+            VSS.notifyLoadSucceeded();
+        });    
+
+        function onTestButtonClicked() {
+
+            let sourcePlanId = document.getElementById("txtPlanId").value;
+
+            console.log('>>> cloning test plan ' + sourcePlanId);
+
+            // reference: https://docs.microsoft.com/en-us/rest/api/azure/devops/test/clone-operation/clone-test-plan?view=azure-devops-rest-5.0
+            testClient.cloneTestPlan( {
+
+                options: {
+                    copyAllSuites: true
+                },
+
+                destinationTestPlan: {
+                    name: 'TestPlanClonedFromNr' + sourcePlanId
+                }
+
+            }, 'TinoPartsUnlimited', sourcePlanId).then(function(){
+
+                alert('Test Plan cloned successfully');
+            });
+        }
+
+    </script>
+
+</head>
+<body>
+	<h1>Tino's Custom Hub v1.0.15</h1>
+    <br>
+    Enter Test Plan ID to clone:
+    <br>
+    <input type="text" id="txtPlanId" name="txtPlanId"/>
+    <br>
+    <button onClick="onTestButtonClicked()">Clone Test Plan</button>
+</body>
+</html>

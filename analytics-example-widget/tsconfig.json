@@ -8,6 +8,7 @@
         "sourceMap": true,
         "baseUrl": "./dist",
         "lib": [ "es6", "dom" ],
-        "jsx" :"react"
+        "jsx" :"react",
+        "strict": false
     }
 }

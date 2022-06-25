@@ -4,8 +4,8 @@ import { WorkItemField } from 'TFS/WorkItemTracking/Contracts';
 
 import { ConfigurationContext } from 'VSS/Common/Contracts/Platform';
 import { Widget } from '../widget/Widget';
-import { AnalyticsWidgetSettings, WidgetSettings } from '../Common/WidgetSettings';
-import { AggregationMode, Aggregation, AggregationConfigurationState} from '../Common/AggregationContracts';
+import { AnalyticsWidgetSettings, WidgetSettings } from '../common/WidgetSettings';
+import { AggregationMode, Aggregation, AggregationConfigurationState} from '../common/AggregationContracts';
 
 import * as Q from 'q';
 import * as React from 'react';
@@ -16,7 +16,7 @@ import { Project, Team, WorkItemTypeField } from "../data/AnalyticsTypes";
 import { Store } from "VSS/Flux/Store";
 import { Picker, PickerProps } from "../components/PickerComponent";
 
-import { ODataClient } from "../data/OdataClient";
+import { ODataClient } from "../data/ODataClient";
 import { ProjectsQuery, TeamsQuery, WitFieldsQuery } from "../data/CommonQueries";
 import { PopularValueQuery, PopularValueQueryOptions, PopularValueQueryResults } from "../data/PopularValueQuery";
 import { AnalyticsConfigState, ConfigOptions, QueryConfigProps } from "./AnalyticsConfigInterfaces";
